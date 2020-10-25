@@ -39,11 +39,11 @@ if __name__ == "__main__":
                         dest='dtype', help='The dtype of the network.')
     parser.add_argument('--gpu', default=[0, 1, 2, 3], nargs='+', type=int,
                         dest='gpu', help='The gpu list used.')
-    parser.add_argument('--workers', default=None, type=int,
+    parser.add_argument('--workers', default=16, type=int,
                         dest='data.workers', help='The number of workers to load data.')
 
     # ***********  Params for data.  **********
-    parser.add_argument('--data_dir', default="/", type=str,
+    parser.add_argument('--data_dir', default="/data/donny/jizhuangxiang", type=str,
                         dest='data.data_dir', help='The Directory of the data.')
     parser.add_argument('--num_classes', default=None, nargs='+', type=int,
                         dest='data.num_classes', help='The number of classes.')
