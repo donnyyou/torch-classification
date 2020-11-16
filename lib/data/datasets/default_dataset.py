@@ -72,11 +72,11 @@ class DefaultDataset(data.Dataset):
                 all_img_list += file_stream.readlines()
 
         for line_cnt in range(len(all_img_list)):
-            line_items = all_img_list[line_cnt].strip().split()
+            line_items = all_img_list[line_cnt].strip().split(',')
             if len(line_items) == 0:
                 continue
 
-            path = line_items[0]
+            path = line_items[0].strip()
             if not os.path.exists(os.path.join(data_dir, path)) or not ImageHelper.is_img(path):
                 Log.warn('Invalid Image Path: {}'.format(os.path.join(data_dir, path)))
                 continue
